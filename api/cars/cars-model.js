@@ -1,11 +1,11 @@
 const db = require("../../data/db-config");
 
 const getAll = async () => {
-  return db("cars").first();
+  return db("cars");
 };
 
-const getById = (id) => {
-  return db("cars").where("id", id);
+const getById = async (id) => {
+  return db("cars").where("id", id).first();
 };
 
 const create = (car) => {
